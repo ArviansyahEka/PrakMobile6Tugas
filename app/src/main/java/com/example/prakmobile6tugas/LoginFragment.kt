@@ -1,5 +1,6 @@
 package com.example.prakmobile6tugas
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -108,7 +109,10 @@ class LoginFragment : Fragment() {
                 // Place your login logic here
                 // Example logic:
                 if (username == "arviansyah" && password == "kur"){
-                    Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
+                    val intenttodashboard =
+                        Intent(requireContext(), Dashboard::class.java)
+                    startActivity(intenttodashboard)
+                    intenttodashboard.putExtra("username", username)
                 } else {
                     Toast.makeText(context, "Invalid Credentials", Toast.LENGTH_SHORT).show()
                 }
